@@ -1,5 +1,4 @@
 
-
 function [s_n, i_n, r_n, infected] = equations_copy(s, i, r, beta, r_time, s_time, infected_list, week)
 % fcn_step Advance an SIR model one timestep
 %
@@ -12,8 +11,6 @@ function [s_n, i_n, r_n, infected] = equations_copy(s, i, r, beta, r_time, s_tim
 %   r = current number of recovered individuals
 %   r_time = time it takes to recover
 %   
-%   beta = infection rate parameter
-%   gamma = recovery rate paramter
 % 
 % Returns
 %   s_n = next number of susceptible individuals
