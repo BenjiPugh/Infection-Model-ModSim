@@ -1,4 +1,4 @@
-function [I,W,w] = beta_sweep(s_0, i_0, r_0, beta, gamma, alpha, num_week)
+function beta_sweep(s_0, i_0, r_0, beta, gamma, alpha, num_week)
 
 clf
 hold on;
