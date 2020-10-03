@@ -20,7 +20,7 @@ function [s_n, i_n, r_n] = week_update(s, i, r, beta, gamma, alpha)
 % compute new infections and recoveries
 infected = beta * i * s;
 recovered = gamma * i;
-resusceptible = alpha * r
+resusceptible = alpha * r;
     
 % Enforce invariants
 total = s + i + r;
