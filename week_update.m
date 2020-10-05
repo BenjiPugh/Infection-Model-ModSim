@@ -1,8 +1,8 @@
 function [s_n, i_n, r_n] = week_update(s, i, r, beta, gamma, alpha)
-% fcn_step Advance an SIR model one timestep
+% week_update Advance a SIR model one timestep
 %
 % Usage
-%   [s_n, i_n, r_n] = fcn_step(s, i, r, beta, gamma)
+%   [s_n, i_n, r_n] = week_update(s,i,r,beta,gamma,alpha)
 % 
 % Arguments
 %   s = current number of susceptible individuals
@@ -11,13 +11,19 @@ function [s_n, i_n, r_n] = week_update(s, i, r, beta, gamma, alpha)
 %   
 %   beta = infection rate parameter
 %   gamma = recovery rate paramter
+%   alpha = resusceptibility rate parameter
 % 
 % Returns
 %   s_n = next number of susceptible individuals
 %   i_n = next number of infected individuals
 %   r_n = next number of recovered individuals
+%
+% Preconditions
+%   Must have variables  s,i,r,beta,gamma,alpha
+%Postconditions
+%   Result of week update stored in s_n, i_n, and r_n
 
-% compute new infections and recoveries
+% compute new infections, recoveries, and susceptibilities
 infected = beta * i * s;
 recovered = gamma * i;
 resusceptible = alpha * r;
@@ -34,9 +40,5 @@ s_n = s - infected + resusceptible;
 i_n = i + infected - recovered;
 r_n = r + recovered- resusceptible;
 
-% This way of enforcing invariants does not actually conserve persons!
-%s_n = max(s_n, 0);
-%i_n = max(i_n, 0);
-%r_n = max(r_n, 0);
     
 end
