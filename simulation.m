@@ -1,8 +1,8 @@
 function [S, I, R, W, w] = simulation(s_0, i_0, r_0, beta, gamma, alpha, num_steps)
-% fcn_simulate Simulate a SIR model
+% Simulate a SIR model
 %
 % Usage
-%   [S, I, R, W] = fcn_simulate(s_0, i_0, r_0, beta, gamma, num_steps)
+%   [S, I, R, W] = simulation(s_0, i_0, r_0, beta, gamma, num_steps)
 %
 % Arguments
 %   s_0 = initial number of susceptible individuals
@@ -11,6 +11,7 @@ function [S, I, R, W, w] = simulation(s_0, i_0, r_0, beta, gamma, alpha, num_ste
 %
 %   beta = infection rate parameter
 %   gamma = recovery rate paramter
+%   alpha = resusceptible rate parameter
 %
 %   num_steps = number of simulation steps to simulate
 %
@@ -19,6 +20,7 @@ function [S, I, R, W, w] = simulation(s_0, i_0, r_0, beta, gamma, alpha, num_ste
 %   I = simulation history of infected individuals; vector
 %   R = simulation history of recovered individuals; vector
 %   W = simulation week; vector
+%   w = week ending wave one, result of calling end_check
 
 % Setup
 S = zeros(1, num_steps);
@@ -43,8 +45,8 @@ for step = 2 : num_steps
     R(step) = r;
 end
 
-%run end_check
 
+%Calculate the end of wave 1
 [w] = end_check(I);
 
 
