@@ -13,6 +13,7 @@ hold on
 plot(beta_range, end_list);
 xlabel("Infection Rate")
 ylabel("Weeks Until Outbreak End")
+title(['alpha = ', num2str(alpha),' gamma = ', num2str(gamma)])
 hold off
 [beta_range; end_list]
 end
