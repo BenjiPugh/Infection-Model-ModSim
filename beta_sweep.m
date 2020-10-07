@@ -1,5 +1,5 @@
 function beta_sweep(s_0, i_0, r_0, beta, gamma, alpha, num_week)
- week_update Advance a SIR model one timestep
+%beta_sweep Advance a SIR model one timestep
 %
 % Usage
 %   beta_sweep(s_0, i_0, r_0, beta, gamma, alpha, num_week)
